@@ -14,13 +14,16 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: $color__text-input;
-	border: 1px solid $color__border-input;
-	border-radius: 3px;
+	// color: $color__text-input;
+	// border: 1px solid $color__border-input;
+	// border-radius: 3px;
 
-	&:focus {
-		color: $color__text-input-focus;
-	}
+	// &:focus {
+	// 	color: $color__text-input-focus;
+	// }
+    height: $input-height;
+    border-radius: 0;
+
 }
 
 select {
@@ -42,10 +45,58 @@ input[type="time"],
 input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"] {
-	padding: 3px;
+	padding: 3px 5px;
 }
 
 textarea {
 	padding-left: 3px;
 	width: 100%;
+}
+
+//
+
+
+.search-form {
+    padding: 0px 15px;
+    position: relative;
+    line-height: $menu-item-height;
+
+    .main-navigation & {
+        
+        width: 100%;
+        @media screen and (min-width: $bp-sm) {
+
+            width: initial;
+            float: right;
+        }
+    }
+}
+
+.search-field {
+    width: 100%;
+    outline: none;
+    border: none;
+
+    .main-navigation & {
+        border-bottom: 1px solid $white;
+        background-color: $color__primary;
+
+        color: $white;
+    }
+
+}
+
+.search-submit {
+    @include button-reset;
+    position: absolute;
+    height: $menu-item-height;
+    right: 10px;
+    top: 0;
+
+    color: $color__text-input;
+    font-size: 26px;
+    .main-navigation & {
+        color: $white;
+    }
+    
 }

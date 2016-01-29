@@ -22,3 +22,77 @@
 @mixin clearfix-after() {
 	clear: both;
 }
+
+
+//
+
+
+@mixin tag-styles() {
+    padding: 2px 7px;
+    border-radius: 3px;
+
+    background-color: $color__primary;
+    color: $white;
+
+    font-size: 15px;
+    text-transform: uppercase;
+
+    &:hover {
+        text-decoration: none;
+        background-color: $color__primary-light;
+    }
+
+    &:not(:last-child) {
+        margin-right: 5px;
+    }
+}
+
+@mixin unlist() {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+@mixin button-reset() {
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    text-shadow: none;
+
+    &:active, &:focus {
+        background: none;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        text-shadow: none;
+    }
+}
+
+@mixin block-padding( $sides: false ) {
+
+    @if $sides == true {
+        padding: 0 $padding-standard;
+    }
+    @else {
+       padding: $padding-standard; 
+    }
+    
+
+    @media screen and ( min-width: $bp-md ) {
+        @if $sides == true {
+            padding: 0 $padding-standard * 2;
+        }
+        @else {
+           padding: $padding-standard * 2; 
+        }
+    }
+}
+
+
+
+@mixin text-shadow-subtle() {
+    text-shadow: 1px 2px 2px rgba(0,0,0,0.2);
+}

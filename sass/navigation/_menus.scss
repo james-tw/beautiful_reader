@@ -1,14 +1,16 @@
 .main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
+	// clear: both;
+	// display: block;
+	// float: left;
+	// width: 100%;
 
 	ul {
-		display: none;
+		// display: none;
+
+
 		list-style: none;
-		margin: 0;
-		padding-left: 0;
+		// margin: 0;
+		// padding-left: 0;
 
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -49,8 +51,8 @@
 		}
 	}
 	li {
-		float: left;
-		position: relative;
+		// float: left;
+		// position: relative;
 
 		&:hover > a,
 		&.focus > a {
@@ -68,20 +70,16 @@
 	}
 }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
 
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-	}
-}
+
+// @media screen and (min-width: $bp-sm) {
+// 	.menu-toggle {
+// 		display: none;
+// 	}
+// 	.main-navigation ul {
+// 		display: block;
+// 	}
+// }
 
 .comment-navigation,
 .posts-navigation,
@@ -92,14 +90,134 @@
 		overflow: hidden;
 	}
 
+    .nav-previous, .nav-next {
+        display: none;
+
+        @media screen and (min-width: $bp-sm ) {
+            display: block;
+            width: 40%;
+
+            a {
+                font-size: 20px;
+            }
+        }
+        
+
+    }
+
 	.nav-previous {
 		float: left;
-		width: 50%;
 	}
 
 	.nav-next {
 		float: right;
 		text-align: right;
-		width: 50%;
 	}
 }
+
+//
+
+
+.main-navigation {
+    background-color: $color__primary;
+}
+
+
+.nav-menu {
+    @include unlist;
+    
+    overflow: auto; // pseudo clearfix;
+
+    @media screen and (min-width: $bp-sm) {
+        @include block-padding( true ); //padding on just the sides
+    }
+
+    .main-navigation & {
+        max-height: 0;
+        overflow: hidden;
+
+        @media screen and (min-width: $bp-sm) {
+            max-height: initial;
+        }
+    }
+
+    .main-navigation.toggled & {
+        max-height: 800px;
+        transition: all 350ms linear;
+    }
+}
+
+.menu-item {
+    // float: left;
+
+    @media screen and (min-width: $bp-sm) {
+        float: left;
+    }
+
+    a {
+        display: inline-block;
+        width: 100%;
+        height: $menu-item-height;
+        padding: 0px 15px;
+
+        font-size: 18px;
+        line-height: $menu-item-height;
+        color: $white;
+
+        &:hover {
+            background-color: $color__primary-light;
+            text-decoration: none;
+        }
+
+    }
+
+}
+
+.menu-toggle {
+    @include button-reset;
+    outline: none;
+    text-transform: uppercase;
+
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: inline-block;
+    width: 50px;
+    height: $header-height-sm;
+    text-indent: -9999px;
+    
+
+    @media screen and (min-width: $bp-sm) {
+        display: none;
+    }
+
+    &::after, &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -0.55em;
+        left: 50%;
+        margin-left: -0.8em;
+        width: 1.35em;
+        height: 0.25em;
+        background: #666;
+        box-shadow: 0 0.5em 0 0 #666, 0 1em 0 0 #666;
+
+        @at-root .menu-toggle[aria-expanded="true"]::after {
+            box-shadow: none;
+            transform: rotate(45deg);
+            top: 62%;
+            width: 1.5em;
+        }
+        @at-root .menu-toggle[aria-expanded="true"]::before {
+            box-shadow: none;
+            transform: rotate(-45deg);
+            top: 62%;
+            width: 1.5em;
+        }
+    }
+}
+

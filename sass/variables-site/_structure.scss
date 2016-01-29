@@ -1,2 +1,21 @@
+// Global values
 $size__site-main: 100%;
 $size__site-sidebar: 25%;
+
+$site-max-width: 1180px;
+$padding-standard: 20px;
+
+// Header values
+$header-height-sm: 50px;
+$header-height-md: 80px;
+
+$menu-item-height: 50px;
+
+
+// Breakpoints
+$bp-sm: 500px; // Small
+$bp-md: 770px; // Medium
+$bp-lg: $site-max-width; // Large
+
+// Input values
+$input-height: 32px;

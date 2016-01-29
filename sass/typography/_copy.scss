@@ -43,3 +43,61 @@ mark, ins {
 big {
 	font-size: 125%;
 }
+
+//
+body {
+    color: $color__text;
+}
+
+
+.entry-content {
+
+    & > * {
+        margin-top: 0;
+        margin-bottom: 1.5em;
+    }
+
+    p, ul, li, span {
+        font-size: 18px;
+        line-height: 1.5;
+        letter-spacing: -0.004em;
+
+        font-family: "medium-content-serif-font",Georgia,Cambria,"Times New Roman",Times,serif;
+        font-weight: 400;
+        font-style: normal;
+
+        @media screen and (min-width: $bp-md) {
+            font-size: 21px;
+            line-height: 1.58;
+            letter-spacing: -0.003em;
+
+        }
+    }
+
+    blockquote {
+        padding-left: $padding-standard;
+        padding-right: $padding-standard;
+        margin-bottom: 1.5em;
+
+        quotes: "\201C""\201D";
+
+
+        &:before {
+            color: #ccc;
+            content: open-quote;
+            font-size: 4em;
+            line-height: 0.1em;
+            margin-right: 0.25em;
+            vertical-align: -0.4em;
+        }
+
+        p {
+            display: inline;
+            font-style: italic;
+            color: $color__text-light;
+            font-size: 24px;
+        }
+
+    }
+    
+}

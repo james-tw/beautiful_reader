@@ -25,12 +25,12 @@ function beautiful_reader_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'beautiful_reader' ),
+		esc_html_x( '%s', 'post date', 'beautiful_reader' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', 'beautiful_reader' ),
+		esc_html_x( '∙ by %s', 'post author', 'beautiful_reader' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
@@ -47,15 +47,15 @@ function beautiful_reader_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html__( ', ', 'beautiful_reader' ) );
-		if ( $categories_list && beautiful_reader_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'beautiful_reader' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-		}
+		// $categories_list = get_the_category_list( esc_html__( ', ', 'beautiful_reader' ) );
+		// if ( $categories_list && beautiful_reader_categorized_blog() ) {
+		// 	printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'beautiful_reader' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+		// }
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'beautiful_reader' ) );
-		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'beautiful_reader' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+		$tags_list = get_the_tag_list(  );
+		if ( $tags_list && is_single() ) {
+			printf( '<span class="tags-links">' . esc_html__( '%1$s', 'beautiful_reader' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 

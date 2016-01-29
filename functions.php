@@ -41,6 +41,8 @@ function beautiful_reader_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
+    add_image_size('thumbnail-card', 300, 550, true);
+    add_image_size('banner', 1100, 400, false);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -107,6 +109,24 @@ function beautiful_reader_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+    
+    register_sidebar( array(
+        'name'          => __( 'First Footer Widget Area', 'beautiful_reader' ),
+        'id'            => 'sidebar-2',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ) );
+    
+    register_sidebar( array(
+        'name'          => __( 'Second Footer Widget Area', 'beautiful_reader' ),
+        'id'            => 'sidebar-3',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ) );
 }
 add_action( 'widgets_init', 'beautiful_reader_widgets_init' );
 
@@ -114,6 +134,10 @@ add_action( 'widgets_init', 'beautiful_reader_widgets_init' );
  * Enqueue scripts and styles.
  */
 function beautiful_reader_scripts() {
+    // Add Genericons font.
+    wp_enqueue_style( 'genericons', get_template_directory_uri() . '/fonts/genericons.css', array(), '3.4.1' );
+
+    // Load main stylesheet.
 	wp_enqueue_style( 'beautiful_reader-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'beautiful_reader-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
@@ -125,6 +149,24 @@ function beautiful_reader_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'beautiful_reader_scripts' );
+
+
+/**
+ * Modify "Read More" style.
+ */
+function beautiful_reader_more( $more ) {
+    return ' &hellip; <a href=" "' . get_permalink() . '">Read More &rarr;</a>';
+}
+add_filter('excerpt_more', 'beautiful_reader_more');
+
+
+/**
+ * Modify Excerpt length.
+ */
+function beautiful_reader_excerpt_length( $length ) {
+    return 70;
+}
+add_filter( 'excerpt_length', 'beautiful_reader_excerpt_length', 999 );
 
 /**
  * Implement the Custom Header feature.

@@ -12,7 +12,7 @@
 		return;
 	}
 
-	button = container.getElementsByTagName( 'button' )[0];
+	button = document.querySelectorAll( '.js-menu-toggle' )[0];
 	if ( 'undefined' === typeof button ) {
 		return;
 	}
@@ -31,15 +31,20 @@
 	}
 
 	button.onclick = function() {
+        var self = this;
+
 		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
+            self.innerText = "Open Menu";
 			container.className = container.className.replace( ' toggled', '' );
 			button.setAttribute( 'aria-expanded', 'false' );
 			menu.setAttribute( 'aria-expanded', 'false' );
 		} else {
+            self.innerHTML = "Close Menu";
 			container.className += ' toggled';
 			button.setAttribute( 'aria-expanded', 'true' );
 			menu.setAttribute( 'aria-expanded', 'true' );
 		}
+
 	};
 
 	// Get all the link elements within the menu.
