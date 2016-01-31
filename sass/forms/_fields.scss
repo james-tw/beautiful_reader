@@ -76,12 +76,22 @@ textarea {
     width: 100%;
     outline: none;
     border: none;
+    border-bottom: 1px solid;
+    border-color: $color__text-input;
+
+    &:focus {
+        border-color: $color__primary;
+    }
 
     .main-navigation & {
-        border-bottom: 1px solid $white;
+        border-color: $white;
         background-color: $color__primary;
 
         color: $white;
+
+        &::-webkit-input-placeholder {
+            color: $color__primary-light;
+        }
     }
 
 }
