@@ -120,6 +120,17 @@
 
 .main-navigation {
     background-color: $color__primary;
+    max-height: 0;
+    overflow: hidden;
+
+    &.toggled {
+        max-height: 800px;
+        transition: all 350ms linear;
+    }
+
+    @media screen and (min-width: $bp-sm) {
+            max-height: initial;
+        }
 }
 
 
@@ -132,19 +143,17 @@
         @include block-padding( true ); //padding on just the sides
     }
 
-    .main-navigation & {
-        max-height: 0;
-        overflow: hidden;
+    // .main-navigation & {
+    //     max-height: 0;
+    //     overflow: hidden;
 
-        @media screen and (min-width: $bp-sm) {
-            max-height: initial;
-        }
-    }
+        
+    // }
 
-    .main-navigation.toggled & {
-        max-height: 800px;
-        transition: all 350ms linear;
-    }
+    // .main-navigation.toggled & {
+    //     max-height: 800px;
+    //     transition: all 350ms linear;
+    // }
 }
 
 .menu-item {

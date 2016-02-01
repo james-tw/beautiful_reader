@@ -478,11 +478,17 @@ textarea {
 .search-field {
   width: 100%;
   outline: none;
-  border: none; }
+  border: none;
+  border-bottom: 1px solid;
+  border-color: #666; }
+  .search-field:focus {
+    border-color: #E34842; }
   .main-navigation .search-field {
-    border-bottom: 1px solid #fff;
+    border-color: #fff;
     background-color: #E34842;
     color: #fff; }
+    .main-navigation .search-field::-webkit-input-placeholder {
+      color: #E65F5B; }
 
 .search-submit {
   background: none;
@@ -587,7 +593,16 @@ a {
   text-align: right; }
 
 .main-navigation {
-  background-color: #E34842; }
+  background-color: #E34842;
+  max-height: 0;
+  overflow: hidden; }
+  .main-navigation.toggled {
+    max-height: 800px;
+    -webkit-transition: all 350ms linear;
+            transition: all 350ms linear; }
+  @media screen and (min-width: 500px) {
+    .main-navigation {
+      max-height: initial; } }
 
 .nav-menu {
   margin-top: 0;
@@ -602,17 +617,6 @@ a {
   @media screen and (min-width: 500px) and (min-width: 770px) {
     .nav-menu {
       padding: 0 40px; } }
-
-  .main-navigation .nav-menu {
-    max-height: 0;
-    overflow: hidden; }
-    @media screen and (min-width: 500px) {
-      .main-navigation .nav-menu {
-        max-height: initial; } }
-  .main-navigation.toggled .nav-menu {
-    max-height: 800px;
-    -webkit-transition: all 350ms linear;
-            transition: all 350ms linear; }
 
 @media screen and (min-width: 500px) {
   .menu-item {
