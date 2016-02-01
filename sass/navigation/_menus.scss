@@ -142,22 +142,9 @@
     @media screen and (min-width: $bp-sm) {
         @include block-padding( true ); //padding on just the sides
     }
-
-    // .main-navigation & {
-    //     max-height: 0;
-    //     overflow: hidden;
-
-        
-    // }
-
-    // .main-navigation.toggled & {
-    //     max-height: 800px;
-    //     transition: all 350ms linear;
-    // }
 }
 
 .menu-item {
-    // float: left;
 
     @media screen and (min-width: $bp-sm) {
         float: left;
@@ -185,7 +172,6 @@
 .menu-toggle {
     @include button-reset;
     outline: none;
-    text-transform: uppercase;
 
     float: right;
     position: absolute;
@@ -205,15 +191,14 @@
     &::after, &::before {
         content: '';
         position: absolute;
-        left: 0;
         top: 50%;
-        margin-top: -0.55em;
         left: 50%;
+        margin-top: -0.55em;
         margin-left: -0.8em;
         width: 1.35em;
         height: 0.25em;
-        background: #666;
-        box-shadow: 0 0.5em 0 0 #666, 0 1em 0 0 #666;
+        background: $color__primary;
+        box-shadow: 0 0.5em 0 0 $color__primary, 0 1em 0 0 $color__primary;
 
         @at-root .menu-toggle[aria-expanded="true"]::after {
             box-shadow: none;
