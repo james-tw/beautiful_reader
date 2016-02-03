@@ -581,19 +581,21 @@ a {
   text-align: right; }
 
 .main-navigation {
-  background-color: #E34842;
-  max-height: 0; }
-  .main-navigation::after {
-    clear: both;
-    display: table;
-    content: ""; }
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  background-color: #E34842; }
   .main-navigation.toggled {
     max-height: 800px;
     -webkit-transition: all 350ms linear;
             transition: all 350ms linear; }
   @media screen and (min-width: 770px) {
     .main-navigation {
-      max-height: initial; } }
+      clear: both;
+      display: table;
+      content: "";
+      max-height: initial;
+      overflow: visible; } }
 
 .nav-menu, .sub-menu {
   margin-top: 0;
@@ -617,16 +619,18 @@ a {
       left: -999em;
       z-index: 99999;
       padding: 0; }
-      .menu-item-has-children:hover .sub-menu {
+      .menu-item-has-children a:hover ~ .sub-menu, .menu-item-has-children.focus .sub-menu {
         left: 0%; }
-        .menu-item-has-children:hover .sub-menu .menu-item {
+        .menu-item-has-children a:hover ~ .sub-menu .menu-item, .menu-item-has-children.focus .sub-menu .menu-item {
           float: none;
           display: block; }
-          .menu-item-has-children:hover .sub-menu .menu-item a {
+          .menu-item-has-children a:hover ~ .sub-menu .menu-item a, .menu-item-has-children.focus .sub-menu .menu-item a {
             display: block;
             min-width: 250px;
             height: auto;
-            min-height: 50px; } }
+            min-height: 50px;
+            line-height: 1.5;
+            padding: 10px 15px; } }
 
 .menu-item {
   position: relative; }
