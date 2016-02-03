@@ -17,5 +17,7 @@ $bp-sm: 500px; // Small
 $bp-md: 770px; // Medium
 $bp-lg: $site-max-width; // Large
 
+$bp-menu: $bp-md; // Point at which the main menu changes.
+
 // Input values
 $input-height: 32px;

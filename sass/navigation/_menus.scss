@@ -8,71 +8,71 @@
 		// display: none;
 
 
-		list-style: none;
+		// list-style: none;
 		// margin: 0;
 		// padding-left: 0;
 
-		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 1.5em;
-			left: -999em;
-			z-index: 99999;
+		// ul {
+		// 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+		// 	float: left;
+		// 	position: absolute;
+		// 	top: 1.5em;
+		// 	left: -999em;
+		// 	z-index: 99999;
 
-			ul {
-				left: -999em;
-				top: 0;
-			}
+		// 	ul {
+		// 		left: -999em;
+		// 		top: 0;
+		// 	}
 
-			li {
-				&:hover > ul,
-				&.focus > ul {
-					left: 100%;
-				}
-			}
+		// 	li {
+		// 		&:hover > ul,
+		// 		&.focus > ul {
+		// 			left: 100%;
+		// 		}
+		// 	}
 
-			a {
-				width: 200px;
-			}
+		// 	a {
+		// 		width: 200px;
+		// 	}
 
-			:hover > a,
-			.focus > a {
-			}
+		// 	:hover > a,
+		// 	.focus > a {
+		// 	}
 
-			a:hover,
-			a.focus {
-			}
-		}
+		// 	a:hover,
+		// 	a.focus {
+		// 	}
+		// }
 
-		li:hover > ul,
-		li.focus > ul {
-			left: auto;
-		}
+		// li:hover > ul,
+		// li.focus > ul {
+			// left: auto;
+		// }
 	}
-	li {
-		// float: left;
-		// position: relative;
+	// li {
+	// 	// float: left;
+	// 	// position: relative;
 
-		&:hover > a,
-		&.focus > a {
-		}
-	}
-	a {
-		display: block;
-		text-decoration: none;
-	}
+	// 	&:hover > a,
+	// 	&.focus > a {
+	// 	}
+	// }
+	// a {
+	// 	display: block;
+	// 	text-decoration: none;
+	// }
 
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
-	}
+	// .current_page_item > a,
+	// .current-menu-item > a,
+	// .current_page_ancestor > a,
+	// .current-menu-ancestor > a {
+	// }
 }
 
 
 
-// @media screen and (min-width: $bp-sm) {
+// @media screen and (min-width: $bp-menu) {
 // 	.menu-toggle {
 // 		display: none;
 // 	}
@@ -93,7 +93,7 @@
     .nav-previous, .nav-next {
         display: none;
 
-        @media screen and (min-width: $bp-sm ) {
+        @media screen and (min-width: $bp-menu ) {
             display: block;
             width: 40%;
 
@@ -119,34 +119,66 @@
 
 
 .main-navigation {
+    @include clearfix-after;
     background-color: $color__primary;
     max-height: 0;
-    overflow: hidden;
 
     &.toggled {
         max-height: 800px;
         transition: all 350ms linear;
     }
 
-    @media screen and (min-width: $bp-sm) {
-            max-height: initial;
-        }
+    @media screen and (min-width: $bp-menu) {
+        max-height: initial;
+    }
 }
 
 
-.nav-menu {
+.nav-menu, .sub-menu {
     @include unlist;
     
-    overflow: auto; // pseudo clearfix;
+    // overflow: auto; // pseudo clearfix;
 
-    @media screen and (min-width: $bp-sm) {
+    @media screen and (min-width: $bp-menu) {
         @include block-padding( true ); //padding on just the sides
     }
 }
 
-.menu-item {
+.sub-menu {
+    // @include clearfix-after;
+    padding-left: $padding-standard;
+    // float: none;
 
-    @media screen and (min-width: $bp-sm) {
+    @media screen and (min-width: $bp-menu) {
+        // float: left;
+        display: block;
+        position: absolute;
+        left: -999em;
+        z-index: 99999;
+        padding: 0;
+
+        .menu-item-has-children:hover & {
+            left: 0%;
+
+            .menu-item {
+                float: none;
+                display: block;
+
+                a {
+                    display: block;
+                    min-width: 250px;
+                    height: auto;
+                    min-height: $menu-item-height;
+                }
+            }
+        }
+    }
+}
+
+.menu-item {
+    position: relative;
+
+    @media screen and (min-width: $bp-menu) {
         float: left;
     }
 
@@ -159,6 +191,7 @@
         font-size: 18px;
         line-height: $menu-item-height;
         color: $white;
+        background-color: $color__primary;
 
         &:hover {
             background-color: $color__primary-light;
@@ -184,7 +217,7 @@
     text-indent: -9999px;
     
 
-    @media screen and (min-width: $bp-sm) {
+    @media screen and (min-width: $bp-menu) {
         display: none;
     }
 
