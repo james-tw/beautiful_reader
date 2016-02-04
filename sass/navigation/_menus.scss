@@ -1,10 +1,10 @@
-.main-navigation {
+// .main-navigation {
 	// clear: both;
 	// display: block;
 	// float: left;
 	// width: 100%;
 
-	ul {
+	// ul {
 		// display: none;
 
 
@@ -49,7 +49,7 @@
 		// li.focus > ul {
 			// left: auto;
 		// }
-	}
+	// }
 	// li {
 	// 	// float: left;
 	// 	// position: relative;
@@ -68,7 +68,7 @@
 	// .current_page_ancestor > a,
 	// .current-menu-ancestor > a {
 	// }
-}
+// }
 
 
 
@@ -140,8 +140,6 @@
 
 .nav-menu, .sub-menu {
     @include unlist;
-    
-    // overflow: auto; // pseudo clearfix;
 
     @media screen and (min-width: $bp-menu) {
         @include block-padding( true ); //padding on just the sides
@@ -159,7 +157,8 @@
         padding: 0;
 
         .menu-item-has-children a:hover ~ &, 
-        .menu-item-has-children.focus & {
+        .menu-item-has-children.focus &,
+        &:hover {
             left: 0%;
 
             .menu-item {
@@ -176,6 +175,7 @@
                 }
             }
         }
+
     }
 }
 
