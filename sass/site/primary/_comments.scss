@@ -4,3 +4,58 @@
 .bypostauthor {
 	display: block;
 }
+
+.comment-list {
+    margin: 0;
+    padding-left: 0;
+}
+
+.comment {
+    list-style: none;
+
+    .children {
+        margin: 0;
+        border-left: 5px solid $off-white;
+        padding-left: 10px;
+    }
+}
+
+.comment-body {
+    margin-bottom: 15px;
+}
+
+#commentform {
+    @include clearfix;
+}
+
+.comment-form-comment {
+    margin: 1em 0;
+
+    textarea {
+        height: auto;
+    }    
+}
+
+.comment-notes {
+    font-size: 0.8em;
+    margin: 0;
+}
+
+.comment-form-author, .comment-form-email, .comment-form-url {
+    padding: 0 1em 1em 0;
+    margin: 0;
+
+    @media screen and (min-width: $bp-md) {
+        float: left;
+        width: 33.333%;
+    }
+
+    input {
+        display: block;
+        width: 100%;
+    }
+}
+
+.cancel-comment-reply-link {
+    float: right;
+}
