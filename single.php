@@ -9,6 +9,9 @@
 
 get_header(); ?>
 
+    <!-- Increases the post views count by 1. -->
+    <?php setPostViews(get_the_ID()); ?>
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 

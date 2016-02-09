@@ -22,12 +22,13 @@ body {
 
 .site-content {
     @include block-padding;
+
     background-color: $color__background-body;
 
 
 }
 
-.site-main, .widget-area, .site-info { //#main
+.site-main, .site-info { //#main
     margin: 0 auto;
     max-width: 800px;
 }
@@ -78,7 +79,7 @@ body {
     }
 }
 .site-header {
-    
+
 }
 .site-title {
     margin: 0;

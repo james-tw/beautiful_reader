@@ -29,22 +29,42 @@ get_header(); ?>
     
                 // endwhile; // End of the loop.
     
-                $latest_post = new WP_Query('posts_per_page=9');
+                $latest_posts = new WP_Query('posts_per_page=9');
+                $c = 0;
                 
-                if ( $latest_post->have_posts() ) { ?>
+                if ( $latest_posts->have_posts() ) { ?>
                 
-                    <?php while ( $latest_post->have_posts() ) {
+                    <?php while ( $latest_posts->have_posts() ) {
+                        $c++;
+
+
+                            $latest_posts->the_post();
                 
-                        $latest_post->the_post();
+                            get_template_part( 'template-parts/content-card');
+
+                        if ( $c == 3 ) {
+
+                            get_template_part( 'template-parts/article-list');
+
+
+                            $latest_posts->the_post();
+                            
+                            get_template_part( 'template-parts/content-card');
+                        }
                 
-                        get_template_part( 'template-parts/content-card');
+                        
+
+
                 
                     }
                 }
                 
                 wp_reset_postdata();
                 ?>
+
+                
             </div> <!-- .card__container -->
+            
 
         </main><!-- #main -->
     </div><!-- #primary -->
