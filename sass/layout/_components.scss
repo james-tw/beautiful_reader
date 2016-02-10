@@ -12,7 +12,7 @@
     transition: all 150ms linear;
 
     &:hover {
-        background-color: RGBA(200, 200, 200, .2);
+        background-color: RGBA(200, 200, 200, .4);
         transition: all 150ms linear;
     }
 
@@ -109,17 +109,9 @@
         @include contained-card;
         height: auto;
         padding-bottom: 50px; // For footer
-        // @include text-shadow-subtle;
 
-        border: 1px solid #ccc;
-        // border-top: 5px solid $color__primary;
+        border: 1px solid $off-white;
         box-shadow: 0px 2px 2px -1px #666;
-
-        // border-left: none;
-        // border-right: none;
-
-        // background-color: $color__primary;
-        // color: $white;
 
         &__link {
             color: $color__text;
@@ -152,25 +144,25 @@
 
     &__comments-number {
         position: absolute;
-        right: 10px;
+        right: 12px;
         top: 50%;
         transform: translateY(-50%);
 
         background-color: $color__primary;
         color: white;
-        font-size: 14px;
-        line-height: 22px;
+        font-size: 12px;
+        line-height: 17px;
         text-align: center;
 
-        width: 30px;
-        height: 22px;
+        width: 26px;
+        height: 17px;
         border-radius: 2px;
 
         &::before {
             content: "";
             position: absolute;
-            left: 7px;
-            bottom: -8px;
+            left: 6px;
+            bottom: -7px;
             height: 8px;
             width: 6px;
 

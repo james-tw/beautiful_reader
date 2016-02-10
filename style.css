@@ -468,11 +468,11 @@ table {
       border-color: #E65F5B; }
     .button--primary[disabled] {
       cursor: default;
-      background-color: #ccc;
-      border-color: #ccc; }
+      background-color: #cecece;
+      border-color: #cecece; }
       .button--primary[disabled]:hover, .button--primary[disabled]:focus {
-        background-color: #ccc;
-        border-color: #ccc; }
+        background-color: #cecece;
+        border-color: #cecece; }
 
 input[type="text"],
 input[type="email"],
@@ -940,7 +940,7 @@ body {
   -webkit-transition: all 150ms linear;
           transition: all 150ms linear; }
   .card:hover {
-    background-color: RGBA(200, 200, 200, 0.2);
+    background-color: RGBA(200, 200, 200, 0.4);
     -webkit-transition: all 150ms linear;
             transition: all 150ms linear; }
   .card__overlay {
@@ -1042,7 +1042,7 @@ body {
             flex-grow: 1;
     height: auto;
     padding-bottom: 50px;
-    border: 1px solid #ccc;
+    border: 1px solid #cecece;
     box-shadow: 0px 2px 2px -1px #666; }
     @media screen and (min-width: 630px) {
       .card__container .article-list {
@@ -1076,24 +1076,24 @@ body {
       text-decoration: none; }
   .article-list__comments-number {
     position: absolute;
-    right: 10px;
+    right: 12px;
     top: 50%;
     -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
             transform: translateY(-50%);
     background-color: #E34842;
     color: white;
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 12px;
+    line-height: 17px;
     text-align: center;
-    width: 30px;
-    height: 22px;
+    width: 26px;
+    height: 17px;
     border-radius: 2px; }
     .article-list__comments-number::before {
       content: "";
       position: absolute;
-      left: 7px;
-      bottom: -8px;
+      left: 6px;
+      bottom: -7px;
       height: 8px;
       width: 6px;
       border-top: 6px solid #E34842;
@@ -1200,7 +1200,7 @@ body {
   list-style: none; }
   .comment .children {
     margin: 0;
-    border-left: 5px solid #ccc;
+    border-left: 5px solid #cecece;
     padding-left: 10px; }
 
 .comment-body {
