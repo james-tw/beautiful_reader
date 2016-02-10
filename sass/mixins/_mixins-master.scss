@@ -25,6 +25,16 @@
     }
 }
 
+@mixin max-auto() {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+@mixin link-color( $color: $color__link ) {
+    &, &:link, &:visited, &:hover, &:active {
+        color: $color;
+    }
+}
 
 //
 

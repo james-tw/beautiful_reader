@@ -27,7 +27,7 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-        <?php the_post_thumbnail( ); ?>
+        <?php the_post_thumbnail('banner'); ?>
 		<?php
             if ( is_single() ) {
                 the_content( sprintf(

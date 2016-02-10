@@ -42,11 +42,12 @@ function beautiful_reader_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
     add_image_size('thumbnail-card', 300, 550, true);
-    add_image_size('banner', 1100, 400, false);
+    add_image_size('banner', 1100, 400, true);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'beautiful_reader' ),
+        'primary' => esc_html__( 'Primary', 'beautiful_reader' ),
+        'footer' => esc_html__( 'Footer Nav', 'beautiful_reader' ),
 	) );
 
 	/*
@@ -115,8 +116,8 @@ function beautiful_reader_widgets_init() {
         'id'            => 'sidebar-2',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget'  => '</aside>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
     ) );
     
     register_sidebar( array(
@@ -124,8 +125,17 @@ function beautiful_reader_widgets_init() {
         'id'            => 'sidebar-3',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget'  => '</aside>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+    
+    register_sidebar( array(
+        'name'          => __( 'Homepage Card Widget Area', 'beautiful_reader' ),
+        'id'            => 'card-widget-1',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
     ) );
 }
 add_action( 'widgets_init', 'beautiful_reader_widgets_init' );

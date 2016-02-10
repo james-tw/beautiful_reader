@@ -59,12 +59,12 @@ textarea {
 
 
 .search-form {
-    padding: 0px 15px;
     position: relative;
     line-height: $menu-item-height;
 
     .main-navigation & {
         
+        padding: 0px 15px;
         width: 100%;
         @media screen and (min-width: $bp-menu) {
 
@@ -91,8 +91,21 @@ textarea {
 
         color: $white;
 
+        /* do not group these rules */
         &::-webkit-input-placeholder {
-            color: $color__primary-light;
+            color: $white;
+        }
+        &:-moz-placeholder {
+            /* FF 4-18 */
+            color: $white;
+        }
+        &::-moz-placeholder {
+            /* FF 19+ */
+            color: $white;
+        }
+        &:-ms-input-placeholder {
+            /* IE 10+ */
+            color: $white;
         }
     }
 
@@ -102,13 +115,14 @@ textarea {
     @include button-reset;
     position: absolute;
     height: $menu-item-height;
-    right: 10px;
+    right: 0px;
     top: 0;
 
     color: $color__text-input;
     font-size: 26px;
     .main-navigation & {
         color: $white;
+        right: 10px;
     }
     
 }

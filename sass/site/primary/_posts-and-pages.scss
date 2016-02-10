@@ -31,5 +31,6 @@
 .tags-links {
     a {
         @include tag-styles;
+        @include link-color($white);
     }
 }
