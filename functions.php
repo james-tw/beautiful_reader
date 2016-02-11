@@ -147,6 +147,9 @@ function beautiful_reader_scripts() {
     // Add Genericons font.
     wp_enqueue_style( 'genericons', get_template_directory_uri() . '/fonts/genericons/genericons.css', array(), '3.4.1' );
 
+    // Add Open Sans font.
+    wp_enqueue_style( 'open_sans', 'https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600' );
+
     // Load main stylesheet.
 	wp_enqueue_style( 'beautiful_reader-style', get_stylesheet_uri() );
 

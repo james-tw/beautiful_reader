@@ -141,8 +141,9 @@
         display: block;
         padding: 7px 20px;
 
-        font-size: 18px;
+        font-size: 16px;
         line-height: 1.25;
+        font-weight: $fw-normal;
 
         &:hover {
             color: $color__primary;
@@ -242,4 +243,8 @@
             text-align: center;
         }
     }
+}
+
+.widget_recent_entries {
+    font-weight: 400;
 }
