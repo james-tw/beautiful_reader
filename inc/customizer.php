@@ -74,7 +74,7 @@ function beautiful_reader_customize_css() { ?>
 
     .main-navigation, 
     .main-navigation .search-field, 
-    .menu-item a, 
+    .main-navigation .menu-item a, 
     .card__badge,
     .article-list__comments-number,
     .tags-links a,

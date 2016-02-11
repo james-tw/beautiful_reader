@@ -982,30 +982,59 @@ body:not(.page-template-full-width-page) #secondary {
     width: 50%; }
 
 .site-branding {
-  padding: 0 10px;
   position: relative;
   height: 50px;
+  overflow: hidden;
   background-color: #fff; }
-  @media screen and (min-width: 500px) {
-    .site-branding {
-      padding: 0 20px; } }
-  @media screen and (min-width: 770px) {
-    .site-branding {
-      padding: 0 40px; } }
+  .site-branding--banner {
+    background-size: cover;
+    background-position: 50%; }
+    .site-branding--banner .site-title,
+    .site-branding--banner .site-description {
+      display: none; }
   @media screen and (min-width: 770px) {
     .site-branding {
       height: 80px; } }
 
+.site-logo {
+  padding: 0 10px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  width: auto; }
+  @media screen and (min-width: 500px) {
+    .site-logo {
+      padding: 0 20px; } }
+  @media screen and (min-width: 770px) {
+    .site-logo {
+      padding: 0 40px; } }
+
 .site-title {
+  padding: 0 10px;
   margin: 0;
   line-height: 50px; }
+  @media screen and (min-width: 500px) {
+    .site-title {
+      padding: 0 20px; } }
+  @media screen and (min-width: 770px) {
+    .site-title {
+      padding: 0 40px; } }
   @media screen and (min-width: 770px) {
     .site-title {
       line-height: 80px; } }
 
 .site-description {
+  padding: 0 10px;
   margin-top: 5px;
   margin-bottom: 0; }
+  @media screen and (min-width: 500px) {
+    .site-description {
+      padding: 0 20px; } }
+  @media screen and (min-width: 770px) {
+    .site-description {
+      padding: 0 40px; } }
 
 /*--------------------------------------------------------------
 # Components

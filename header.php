@@ -25,7 +25,15 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'beautiful_reader' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
+		<div class="site-branding 
+            <?php if ( get_header_image() ) : ?>
+                site-branding--banner" 
+            style="background-image: url( <?php header_image(); ?> )
+            <?php endif; // End header image check. ?>
+        ">
+
+            <?php beautiful_reader_the_site_logo(); ?>
+
             <button class="menu-toggle js-menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'beautiful_reader' ); ?></button>
 			<?php
 			if ( is_front_page() && is_home() ) : ?>
@@ -40,6 +48,7 @@
 				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 			<?php
 			endif; ?>
+
 
 
 		</div><!-- .site-branding -->

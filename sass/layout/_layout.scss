@@ -75,21 +75,38 @@ body {
 }
 
 .site-branding {
-    @include block-padding ( true );
     position: relative;
     height: $header-height-sm;
+    overflow: hidden;
 
     background-color: $color__background-body;
+
+    &--banner {
+        background-size: cover;
+        background-position: 50%;
+
+        .site-title,
+        .site-description {
+            display: none;
+        }
+    }
 
     @media screen and (min-width: $bp-md) {
 
         height: $header-height-md;
     }
 }
-.site-header {
 
+.site-logo {
+    @include block-padding ( true );
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: auto;
 }
+
 .site-title {
+    @include block-padding ( true );
     margin: 0;
     line-height: $header-height-sm;
 
@@ -99,6 +116,7 @@ body {
     }
 }
 .site-description {
+    @include block-padding ( true );
     margin-top: 5px;
     margin-bottom: 0;
 }

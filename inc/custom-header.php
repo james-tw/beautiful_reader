@@ -24,9 +24,9 @@ function beautiful_reader_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'beautiful_reader_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
-		'width'                  => 1000,
-		'height'                 => 250,
-		'flex-height'            => true,
+		'width'                  => 1180,
+		'height'                 => 80,
+		'flex-height'            => false,
 		'wp-head-callback'       => 'beautiful_reader_header_style',
 	) ) );
 }
