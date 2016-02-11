@@ -263,13 +263,19 @@
     .menu-item {
         display: inline-block;
         position: relative;
-        padding: 0 15px;
+        padding: 0 5px;
 
         font-size: 18px;
         font-weight: 300;
 
         a {
             @include link-color($off-white);
+            padding: 10px;
+
+            &:hover {
+                color: $white;
+                text-decoration: none;
+            }
         }
     }
 
