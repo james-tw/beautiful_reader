@@ -42,17 +42,23 @@
 }
 
 .comment-form-author, .comment-form-email, .comment-form-url {
-    padding: 0 1em 1em 0;
+    padding-bottom: 1em;
     margin: 0;
 
     @media screen and (min-width: $bp-md) {
         float: left;
         width: 33.333%;
+        padding-right: 1em;
     }
 
     input {
         display: block;
         width: 100%;
+    }
+}
+.comment-form-url {
+    @media screen and (min-width: $bp-md) {
+        padding-right: 0;
     }
 }
 

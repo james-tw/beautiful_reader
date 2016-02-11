@@ -118,13 +118,13 @@
 }
 
 
-@mixin animation-base($duration: 300ms, $timing: ease-in-out, $delay: 0) {
+@mixin animation-base($duration: 250ms, $timing: ease-in-out, $delay: 0) {
     transition-duration: $duration;
     transition-timing-function: $timing;
     transition-delay: $delay;
 }
 
-@mixin animation($duration: 300ms, $timing: ease-in-out, $delay: 0, $property: all) {
+@mixin animation($duration: 250ms, $timing: ease-in-out, $delay: 0, $property: all) {
     @include animation-base($duration, $timing, $delay);
 
     transition-property: $property;
