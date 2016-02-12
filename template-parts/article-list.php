@@ -73,7 +73,7 @@
 
      ?>
      <div class="article-list__footer">
-         <a class="article-list__more" href="#">See More</a>
+         <a class="article-list__more" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">See More</a>
      </div>
      <?php } ?>
     
