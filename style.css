@@ -353,7 +353,7 @@ ul, ol {
     margin-top: 0;
     margin-bottom: 1.5em; }
   .entry-content p, .entry-content ul, .entry-content li, .entry-content span {
-    font-family: "medium-content-serif-font",Georgia,Cambria,"Times New Roman",Times,serif;
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
     font-weight: 400;
     font-style: normal; }
   .entry-content blockquote {
@@ -958,7 +958,7 @@ body {
   margin: 0 auto;
   max-width: 800px; }
   @media screen and (min-width: 1260px) {
-    .single .site-main {
+    .single .post-sidebar ~ .site-main {
       float: left; } }
 
 .content-area {
@@ -1342,8 +1342,10 @@ body:not(.page-template-full-width-page) #secondary {
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
-.comment-content a {
-  word-wrap: break-word; }
+.comment-content {
+  font-weight: 400; }
+  .comment-content a {
+    word-wrap: break-word; }
 
 .bypostauthor {
   display: block; }
@@ -1353,19 +1355,50 @@ body:not(.page-template-full-width-page) #secondary {
   padding-left: 0; }
 
 .comment {
-  list-style: none; }
+  list-style: none;
+  margin-top: 20px; }
   .comment .children {
     margin: 0;
     border-left: 5px solid #cecece;
     padding-left: 10px; }
+  .comment .reply {
+    margin-top: 10px; }
 
-.comment-body {
-  margin-bottom: 15px; }
+.comment-meta {
+  position: relative;
+  margin-bottom: 10px; }
+  .comment-meta .avatar {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+            transform: translate(0, -50%); }
+  .comment-meta .comment-author {
+    padding-left: 45px;
+    font-size: 18px;
+    font-weight: 600; }
+  .comment-meta .comment-metadata {
+    padding-left: 45px;
+    font-size: 14px; }
+
+.comments-title {
+  border-bottom: 5px solid #E34842;
+  padding: 7px 0;
+  margin: 1em 0 0;
+  display: inline-block; }
+
+.comment-text {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 18px;
+  line-height: 1.5em; }
+  .comment-text p:not(:first-child) {
+    margin-top: 10px; }
 
 #commentform {
   clear: both;
   display: table;
-  content: ""; }
+  content: "";
+  margin-bottom: 2em; }
 
 .comment-form-comment {
   margin: 1em 0; }
@@ -1392,7 +1425,7 @@ body:not(.page-template-full-width-page) #secondary {
   .comment-form-url {
     padding-right: 0; } }
 
-.cancel-comment-reply-link {
+#cancel-comment-reply-link {
   float: right; }
 
 /*--------------------------------------------------------------

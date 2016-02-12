@@ -42,7 +42,7 @@ get_header(); ?>
                 
                             get_template_part( 'template-parts/content-card');
 
-                        if ( $c == 3 ) {
+                        if ( $c == 3 AND get_theme_mod('front_page_card_widget') ) {
 
                             get_template_part( 'template-parts/article-list');
 

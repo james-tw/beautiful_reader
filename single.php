@@ -18,41 +18,44 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 
+        <?php if ( get_theme_mod('single_page_card_sidebar') ) { ?>
+
         <aside class="post-sidebar">
             <?php 
 
             $args = array( 
-                'post_type'    => 'post',
-                'posts_per_page'  => 6,  /* get n posts, or set -1 for all */
-                'orderby'      => 'meta_value_num',  /* this will look at the meta_key you set below */
-                'meta_key'     => 'post_views_count',
-                'order'        => 'DESC',
-                'post_status'  => 'publish',
-                'date_query'   => array( /* Retrieves only posts from the past month. */
-                        array(
-                            'after'  => '1 month ago',
-                        ),
-                    ),
+               'post_type'    => 'post',
+               'posts_per_page'  => 6,  /* get n posts, or set -1 for all */
+               'orderby'      => 'meta_value_num',  /* this will look at the meta_key you set below */
+               'meta_key'     => 'post_views_count',
+               'order'        => 'DESC',
+               'post_status'  => 'publish',
+               'date_query'   => array( /* Retrieves only posts from the past month. */
+                       array(
+                           'after'  => '1 month ago',
+                       ),
+                   ),
             );
 
             $top_posts = new WP_Query( $args );
 
             if ( $top_posts->have_posts() ) { ?>
-            
-                <?php while ( $top_posts->have_posts() ) {
-                        $top_posts->the_post();
 
-                        // Don't show the current post in the list.
-                        if ( $post_name !== $post->post_name ) {
-                            get_template_part( 'template-parts/content-card');
-                        }
-                        
-                }
+               <?php while ( $top_posts->have_posts() ) {
+                       $top_posts->the_post();
+
+                       // Don't show the current post in the list.
+                       if ( $post_name !== $post->post_name ) {
+                           get_template_part( 'template-parts/content-card');
+                       }
+                       
+               }
             }
-            wp_reset_postdata();
+            wp_reset_postdata(); ?>
+       </aside>
 
-     ?>
-        </aside>
+        <?php } ?>
+        
 
 		<main id="main" class="site-main" role="main">
 

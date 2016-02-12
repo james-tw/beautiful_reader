@@ -50,14 +50,14 @@ body {
             }
         }
     }
-    
+
 }
 
 .site-main { //#main
     @include max-auto;
 
-    .single & {
-
+    // On single pages, if the .post-sidebar exists, float left on desktop.
+    .single .post-sidebar ~ & {
         @media screen and (min-width: 1260px) {
             float: left;
         }
