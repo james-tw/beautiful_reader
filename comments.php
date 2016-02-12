@@ -49,10 +49,7 @@ if ( post_password_required() ) {
 
 		<ul class="comment-list">
 			<?php
-				wp_list_comments( array(
-					'style'      => 'ul',
-					'short_ping' => true,
-				) );
+				wp_list_comments( 'type=comment&callback=beautiful_reader_comment' );
 			?>
 		</ul><!-- .comment-list -->
 
