@@ -938,12 +938,32 @@ body {
     .site-content {
       padding: 40px; } }
 
+.post-sidebar {
+  display: none; }
+  @media screen and (min-width: 1260px) {
+    .post-sidebar {
+      float: right;
+      display: block;
+      width: 250px; }
+      .post-sidebar .card {
+        height: 250px;
+        margin-bottom: 20px; }
+        .post-sidebar .card__title {
+          font-size: 24px;
+          margin: 0; }
+        .post-sidebar .card__author {
+          display: none; } }
+
 .site-main {
   margin: 0 auto;
   max-width: 800px; }
+  @media screen and (min-width: 1260px) {
+    .single .site-main {
+      float: left; } }
 
 .content-area {
-  margin-bottom: 60px; }
+  margin-bottom: 60px;
+  overflow: auto; }
 
 body:not(.page-template-full-width-page) #secondary {
   margin: 0 auto;

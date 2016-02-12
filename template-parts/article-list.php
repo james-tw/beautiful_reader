@@ -23,9 +23,9 @@
 
     <?php 
 
-            $argsz = array( 
+            $args = array( 
                 'post_type'    => 'post',
-                'posts_per_page'  => 3,  /* get 3 posts, or set -1 for all */
+                'posts_per_page'  => 4,  /* get n posts, or set -1 for all */
                 'orderby'      => 'meta_value_num',  /* this will look at the meta_key you set below */
                 'meta_key'     => 'post_views_count',
                 'order'        => 'DESC',
@@ -37,7 +37,7 @@
                     ),
             );
 
-            $top_posts = new WP_Query( $argsz );
+            $top_posts = new WP_Query( $args );
 
             
             if ( $top_posts->have_posts() ) { ?>

@@ -29,7 +29,7 @@ get_header(); ?>
     
                 // endwhile; // End of the loop.
     
-                $latest_posts = new WP_Query('posts_per_page=9');
+                $latest_posts = new WP_Query('posts_per_page=8');
                 $c = 0;
                 
                 if ( $latest_posts->have_posts() ) { ?>
