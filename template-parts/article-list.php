@@ -30,11 +30,12 @@
                 'meta_key'     => 'post_views_count',
                 'order'        => 'DESC',
                 'post_status'  => 'publish',
-                'date_query'   => array( /* Retrieves only posts from the past 2 weeks. */
-                        array(
-                            'after'  => '2 weeks ago',
-                        ),
-                    ),
+                // Uncomment if you wish to limit query to posts in the past X weeks.
+                // 'date_query'   => array( /* Retrieves only posts from the past 2 weeks. */
+                //         array(
+                //             'after'  => '2 weeks ago',
+                //         ),
+                //     ),
             );
 
             $top_posts = new WP_Query( $args );
